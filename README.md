@@ -42,3 +42,27 @@ Trading_Strategy
 
 The configuration settings are stored in `Config/config.yaml`. This file includes paths, model parameters, and training configurations.
 
+#### Example `config.yaml`
+
+```yaml
+data:
+  data_path: 'data/ohlcv_data.csv'
+  frequency: '1min'
+  validation_split: 0.2
+
+keras:
+  model:
+    cnn:
+      num_filters: [16, 32, 64]
+      kernel_size: [3, 3]
+      pool_size: [2, 2]
+      dropout_rate: 0.3
+      activation: 'relu'
+      output_activation: 'softmax'
+  training:
+    learning_rate: 0.001
+    batch_size: 16
+    epochs: 30
+    optimizer: 'adam'
+    loss_function: 'categorical_crossentropy'
+```
