@@ -5,19 +5,19 @@ This project aims to develop and test a trading strategy using a 2D Convolutiona
 ## Folder Structure
 
 ```
-Trading_Strategy/
-├── Components/
-├── Config/
+Trading_Strategy
+├── Components
+├── Config
 │   ├── config.yaml
 │   └── config_loader.py
-├── Constants/
-├── Entity/
-├── Logging/
-├── Notebooks/
-├── Pipeline/
-├── Tests/
+├── Constants
+├── Entity
+├── Logging
+├── Notebooks
+├── Pipeline
+├── Tests
 │   └── test_config_loader.py
-├── Utils/
+├── Utils
 ├── .gitignore
 ├── project_files.txt
 └── README.md
