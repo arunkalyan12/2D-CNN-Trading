@@ -1,0 +1,81 @@
+# API Keys and Credentials
+# Store your API keys securely. Use environment variables to avoid hardcoding sensitive information.
+api_keys:
+  coinbase_api_key: ${COINBASE_API_KEY}  # API key for accessing Coinbase data
+  other_service_key: ${OTHER_SERVICE_KEY}  # API key for any additional services
+
+# Trading Strategy Configuration
+# Define the trading strategy, including the signals for entering and exiting trades.
+strategy:
+  name: "MomentumStrategy"  # Name of the trading strategy used for identification
+  entry_signal: "crossover"  # Signal type for entering trades (e.g., moving average crossover)
+  exit_signal: "trend_reversal"  # Signal type for exiting trades (e.g., trend reversal)
+
+# Hyperparameters for 2D CNN Model
+# Configure the model architecture and training parameters for your 2D CNN.
+keras:
+  model:
+    cnn:
+      num_filters: [16, 32, 64]  # Reduced number of filters to save on computation
+      kernel_size: [3, 3]        # Size of the convolutional kernel (height, width)
+      pool_size: [2, 2]          # Size of the pooling window (height, width)
+      dropout_rate: 0.3          # Moderate dropout rate to prevent overfitting
+      activation: 'relu'         # Activation function for convolutional layers
+      output_activation: 'softmax'  # Activation function for output layer
+
+  training:
+    learning_rate: 0.001       # Learning rate for the optimizer
+    batch_size: 16             # Smaller batch size to fit within memory limits
+    epochs: 30                 # Reduced number of epochs to save on training time
+    optimizer: 'adam'          # Optimizer to use
+    loss_function: 'categorical_crossentropy'  # Loss function to use
+
+# Data Settings
+# Define the data parameters, including path, frequency, and preprocessing details.
+data:
+  data_path: "data/ohlcv_data.csv"  # Path to the OHLCV data file. Ensure the file is properly formatted and accessible.
+  frequency: "1min"       # Data frequency (e.g., 1 minute, 5 minutes). Should match the granularity of the data.
+  validation_split: 0.2  # Fraction of data reserved for validation. Helps assess model performance on unseen data.
+  sequence_length: 60    # Number of time steps for each input sequence. Determines the length of data fed into the model.
+  num_features: 5        # Number of features in the data (e.g., open, high, low, close, volume)
+
+  # Adjust data collection and updates based on the current date
+  start_date: "2023-01-01"  # Start date for data collection. Ensure it covers a sufficient period for training.
+  end_date: "2024-09-13"    # End date for data collection. Includes data up to today's date.
+
+# Risk Management
+# Configure risk management parameters to control exposure and potential losses.
+risk_management:
+  max_drawdown: 0.05        # Maximum allowable drawdown (5%). Limits the total loss from peak to trough.
+  stop_loss: 0.02           # Stop-loss percentage (2%). Automatically exits a position if losses exceed this threshold.
+  take_profit: 0.03         # Take-profit percentage (3%). Automatically exits a position when profits reach this threshold.
+  position_size: 0.01       # Fraction of capital allocated per position (1%). Controls how much of your capital is invested in each trade.
+
+# Logging and Monitoring
+# Configure logging to track system performance and errors.
+logging:
+  log_level: "INFO"       # Log level to capture (e.g., DEBUG, INFO, WARNING, ERROR). INFO captures essential information.
+  log_file: "logs/trading.log"  # File to save trading logs. Useful for debugging and reviewing trade history.
+
+# Checkpoints and Backtesting
+# Define settings for model checkpoints and backtesting.
+backtesting:
+  start_date: "2023-01-01"  # Start date for backtesting. Adjust based on available data and strategy requirements.
+  end_date: "2024-09-13"    # End date for backtesting. Includes data up to today's date.
+  save_dir: "checkpoints/"  # Directory to save model checkpoints. Allows restoration of the best model during training.
+  save_best_only: true       # Save only the best model based on validation performance. Reduces unnecessary storage usage.
+
+# Execution Settings
+# Configure order execution parameters to manage trade execution.
+execution:
+  order_type: "limit"       # Type of order to execute (e.g., market, limit). Limit orders specify a price to buy or sell.
+  slippage: 0.01            # Slippage tolerance (1%). Accounts for the difference between expected and actual trade price.
+  latency: 0.1              # Maximum acceptable latency in seconds. Ensures timely execution of trades.
+
+# Miscellaneous
+# Include additional settings that might affect model training and execution.
+misc:
+  random_seed: 42          # Random seed for reproducibility. Ensures consistent results across runs.
+  use_gpu: false           # Indicates GPU is not used. Set to 'false' for a CPU-only environment.
+  max_memory_usage: 4G     # Limit memory usage to avoid overloading the system. Adjust based on your laptop's RAM.
+
