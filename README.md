@@ -4,7 +4,23 @@ This project aims to develop and test a trading strategy using a 2D Convolutiona
 
 ## Folder Structure
 
-Trading Strat/ ├── Components/ <- Modules for specific tasks like data loading, preprocessing, model training, and evaluation. ├── Config/ <- Configuration files, including config.yaml for project settings and hyperparameters. │ ├── config.yaml <- Configuration settings │ ├── config_loader.py <- Script to load configuration settings ├── Constants/ <- Files for storing constant values such as fixed hyperparameters and thresholds. ├── Entity/ <- Data classes or schemas for defining the structure of important objects. ├── Logging/ <- Custom logging configurations and scripts for tracking execution and metrics. ├── Notebooks/ <- Jupyter notebooks for experimentation and analysis. ├── Pipeline/ <- Scripts for end-to-end data processing, model training, and evaluation pipelines. ├── Tests/ <- Unit tests to ensure the correctness of various components. │ └── test_config_loader.py <- Unit tests for the configuration loader ├── Utils/ <- General utility functions and helper scripts. ├── .gitignore <- Specifies files and directories to be ignored by Git. ├── project_files.txt <- Lists the project files and folders. ├── README.md <- This file. ├── requirements.txt <- Lists the project dependencies.
+Trading Strat/
+├── Components/
+├── Config/
+│   ├── config.yaml
+│   └── config_loader.py
+├── Constants/
+├── Entity/
+├── Logging/
+├── Notebooks/
+├── Pipeline/
+├── Tests/
+│   └── test_config_loader.py
+├── Utils/
+├── .gitignore
+├── project_files.txt
+└── README.md
+└── requirements.txt
 
 - **Components/**: Contains modules for specific tasks like data loading, preprocessing, model training, and evaluation.
 - **Config/**: Configuration files including `config.yaml` for project settings and hyperparameters.
