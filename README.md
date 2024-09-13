@@ -22,6 +22,7 @@ Trading Strat/
 ├── README.md
 ├── requirements.txt
 
+
 - **Components/**: Contains modules for specific tasks like data loading, preprocessing, model training, and evaluation.
 - **Config/**: Configuration files including `config.yaml` for project settings and hyperparameters.
 - **Constants/**: Files for storing constant values such as fixed hyperparameters and thresholds.
