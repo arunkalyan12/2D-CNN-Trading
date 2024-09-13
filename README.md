@@ -4,6 +4,7 @@ This project aims to develop and test a trading strategy using a 2D Convolutiona
 
 ## Folder Structure
 
+'''
 Trading Strat/
 ├── Components/
 ├── Config/
@@ -21,7 +22,7 @@ Trading Strat/
 ├── project_files.txt
 ├── README.md
 ├── requirements.txt
-
+'''
 
 - **Components/**: Contains modules for specific tasks like data loading, preprocessing, model training, and evaluation.
 - **Config/**: Configuration files including `config.yaml` for project settings and hyperparameters.
