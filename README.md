@@ -7,21 +7,63 @@ This project aims to develop and test a trading strategy using a 2D Convolutiona
 ```
 Trading_Strategy
 ├── Components
+│   ├── checkpoints
+│   │   └── model_checkpoint.keras
+│   ├── path
+│   │   └── to
+│   │       └── logfile.log
+│   ├── __pycache__
+│   │   ├── model_builder.cpython-39.pyc
+│   │   ├── predict.cpython-39.pyc
+│   │   └── preprocessing.cpython-39.pyc
+│   ├── candlestick_model.keras
+│   ├── data_ingestion.py
+│   ├── model_builder.py
+│   ├── model_evaluation.py
+│   ├── predict.py
+│   ├── predictions.csv
+│   ├── preprocessing.py
+│   ├── train.py
+│   └── trained_model.keras
 ├── Config
+│   ├── __pycache__
+│   │   └── config_loader.cpython-39.pyc
 │   ├── config.yaml
 │   └── config_loader.py
 ├── Constants
+├── Data
+│   ├── Preprocessed
+│   │   └── Preprocessed.csv
+│   └── Raw
+│       └── Rawbtc_ohlcv_jan2023_to_sep2024.csv
 ├── Entity
 ├── Logging
+│   ├── logging
+│   ├── logs
+│   │   └── project.log
+│   ├── logging.yaml
+│   └── logging_config.py
 ├── Notebooks
+│   ├── .ipynb_checkpoints
+│   │   ├── Exploratory Data Analysis-checkpoint.ipynb
+│   │   ├── model_experimentation-checkpoint.ipynb
+│   │   └── Untitled-checkpoint.ipynb
+│   ├── Exploratory Data Analysis.ipynb
+│   ├── model_experimentation.ipynb
+│   └── Untitled.ipynb
 ├── Pipeline
 ├── Tests
+│   ├── __pycache__
+│   │   └── test_config_loader.cpython-39.pyc
 │   └── test_config_loader.py
 ├── Utils
+│   ├── data_preprocessing.py
+│   └── model_helpers.py
 ├── .gitignore
-├── project_files.txt
-└── README.md
+├── main.py
+├── README.md
 └── requirements.txt
+
 ```
 
 ### **Directory Descriptions**
